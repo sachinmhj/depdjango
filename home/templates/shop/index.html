@@ -13,15 +13,16 @@
 <body>
   <div class="container my-3">
     {%for pd in lists%}
-    <h3 class="my-3">{{pd.0.category}}</h3>
+    <h3 class="my-3">category - {{pd.0.category}}</h3>
     <div class="container my-3 d-flex flex-direction-row">
       {%for p in pd%}
       <div class="card container" style="width: 18rem;">
-        <img src="{{p.imag.url}}" class="card-img-top" alt="...">
+        {% load static %}
+        <img src="{% static 'image1.png' %}" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title">{{p.name}}</h5>
-          <p class="card-text">{{p.age}}</p>
-          <a href="#" class="btn btn-outline-info fw-bold mt-1 mb-1">more</a>
+          <h5 class="card-title">product: {{p.name}}</h5>
+          <p class="card-text"><b>price:{{p.age}}</b></p>
+          <a tabindex="0" class="btn btn-outline-info fw-bold mt-1 mb-1" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Title" data-bs-content="And here's some amazing content. It's very engaging. Right?">popover</a>
           <a href="/home/products/{{p.id}}" class="btn btn-outline-info fw-bold mt-1 mb-1">Details</a>
         </div>
       </div>

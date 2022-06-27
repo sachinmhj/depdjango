@@ -10,18 +10,19 @@
                 </a>
             </div>
             <article class="blog-post">
+                {% load static %}
                 <h3 class="blog-post-title mb-1">{{vp.title}}</h3>
                 <p class="blog-post-meta">{{vp.dt}} by <a href="#">{{vp.name}}</a></p>
                 <p>{{vp.desc}}</p>
                 <div class="text-center">
                     <h4>{{vp.head}}</h4>
                     <p>{{vp.chead}}</p>
-                    <img src="{{vp.imaz1.url}}" alt="" class="w-75">
+                    <img src="{% static 'v1.png' %}" alt="" class="w-75">
                 </div>
                 <div class="text-center my-3">
                     <h4>{{vp.head2}}</h4>
                     <p>{{vp.chead2}}</p>
-                    <img src="{{vp.imaz2.url}}" alt="" class="w-75">
+                    <img src="{% static 'v6.png' %}" alt="" class="w-75">
                 </div>
             </article>
         </div>

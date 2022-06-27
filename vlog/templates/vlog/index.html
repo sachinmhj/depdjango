@@ -14,7 +14,8 @@
             </div>
             <div class="col-auto d-none d-lg-block">
                 <div class="bg-image">
-                    <img src="{{itm.imaz1.url}}" class="img-fluid" alt="Sample" />
+                    {% load static %}
+                    <img src="{% static 'v2.png' %}" class="img-fluid" alt="Sample" />
                     <div class="mask" style="background-color: rgb(2, 79, 91);">
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text-white mb-0">{{itm.head}}</p>
