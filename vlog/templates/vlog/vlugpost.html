@@ -1,0 +1,49 @@
+{% extends "vlog/base.html" %}
+{% block title %}blogpost{% endblock %}
+{% block body %}
+<div class="container my-3">
+    <div class="row g-5">
+        <div class="col-md-8">
+            <div class="text-center mb-4 mt-2">
+                <a href="/blog" class="fst-italic border-bottom" role="button">
+                    Goto Blog Page
+                </a>
+            </div>
+            <article class="blog-post">
+                <h3 class="blog-post-title mb-1">{{vp.title}}</h3>
+                <p class="blog-post-meta">{{vp.dt}} by <a href="#">{{vp.name}}</a></p>
+                <p>{{vp.desc}}</p>
+                <div class="text-center">
+                    <h4>{{vp.head}}</h4>
+                    <p>{{vp.chead}}</p>
+                    <img src="{{vp.imaz1.url}}" alt="" class="w-75">
+                </div>
+                <div class="text-center my-3">
+                    <h4>{{vp.head2}}</h4>
+                    <p>{{vp.chead2}}</p>
+                    <img src="{{vp.imaz2.url}}" alt="" class="w-75">
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky mt-2" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">Publish your passions your way. Whether you'd like to share your knowledge,
+                        experiences or the latest news, create a unique and beautiful blog.</p>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="fst-italic">contact us on following platform.</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
