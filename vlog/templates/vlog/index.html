@@ -2,33 +2,39 @@
 {% block title %}blog-Home{% endblock %}
 {% block body %}
 <div class="container my-3">
-    {% for itm in org %}
     <div class="container">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">{{itm.name}}</strong>
-                <h3 class="mb-0">{{itm.title}}</h3>
-                <div class="mb-1 text-muted">{{itm.dt}}</div>
-                <p class="card-text mb-auto">{{itm.desc|slice:":150"}}...</p>
-                <a href="/blog/blogpost/{{itm.bgid}}" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-                <div class="bg-image">
-                    {% load static %}
-                    <img src="{% static 'v2.png' %}" class="img-fluid" alt="Sample" />
-                    <div class="mask" style="background-color: rgb(2, 79, 91);">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p class="text-white mb-0">{{itm.head}}</p>
+        <div class="row mb-2">
+
+            {% for itm in org %}
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">{{itm.name}}</strong>
+                    <h3 class="mb-0">{{itm.title}}</h3>
+                        <div class="mb-1 text-muted">{{itm.dt}}</div>
+                        <p class="card-text mb-auto">{{itm.desc|slice:":150"}}...</p>
+                        <a href="/blog/blogpost/{{itm.bgid}}" class="stretched-link">Continue reading</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <div class="bg-image">
+                            {% load static %}
+                            <img src="{% static 'v2.png' %}" class="img-fluid" alt="Sample" />
+                            <div class="mask" style="background-color: rgb(2, 79, 91);">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <p class="text-white mb-0">{{itm.head}}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
+
         </div>
     </div>
-    {% endfor %}
-    <div class="d-flex flex-row justify-content-center">
-        <div class="btn btn-primary mx-1">prev</div>
-        <div class="btn btn-primary mx-1">next</div>
-    </div>
+    <!-- <div class="d-flex flex-row justify-content-center">
+        <a href="/blog/{{dec}}" class="btn btn-primary mx-1">prev</a>
+        <a href="/blog/{{inc}}" class="btn btn-primary mx-1">next</a>
+    </div> -->
 </div>
 {% endblock %}
